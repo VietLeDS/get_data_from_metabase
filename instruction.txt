@@ -1,0 +1,26 @@
+Steps to run metabase
+1. Run GUI Metabase
+2. Check the Metabase file and export to targeted folder
+
+(1) and (2) run parallelly -> use Threading
+
+Code Structure:
+1. Main file: Auto_Metabase - list_run is mutable, all mutable is in one object: RunRequirements
+2. Helpers: GUI_helpers, Main_helpers, helpers package (if neccessary)
+3. Constants: constants (all in this file)
+4. link_metabase.csv (all data about metabase code in a dataframe, use as constants)
+
+Algorithm:
+0. Has a class of RunStatus, Run Metabse until all code status in RunStatus is True
+Each ReRun the .py manually, RunStatus go back to all False, but after one minute, it can turn to True
+because of the Check file in targeted folder
+1. GUI Metabase: chrome - NewTab - paste link (manually login in the beginning) - check the DownloadIcon
+    - if had, means run successful - click DownloadIcon - click '.csv' to download - Done
+    - if timeout - Rerun / continue
+2. Check file:
+2.1 Check in download folder, if not have '{' in the last row mean download successfully -> export
+2.2 Check in targeted folder, if same name as export name -> status = True
+-> (1), (2.1), (2.2) is Threading
+3. How to Speed up:
+3.1 Chạy GUI và Command line song song, use threading
+3.2 Giảm thời gian chờ Metabase -> Tách việc chạy metabase và việc download ra
