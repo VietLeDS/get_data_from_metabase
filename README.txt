@@ -11,3 +11,5 @@ The main computer with more computing resources will run the Meta_check_download
 All the code is scheduled to be run day by day from 9 am to 11 pm, so you only need to open and set up it only once.
 
 Note: Metabase completes updating the data of yesterday at 9 am, so the code cannot be run before 9 am.
+
+Note2: The Meta_check is a manually and independently check for the completion of the code.
